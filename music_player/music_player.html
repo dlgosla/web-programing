@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h3>오디오 재생</h3>
+	듣고싶은 곡은 선택하고 시작 버튼을 누르면 연속하여 자동연주합니다
+	<hr>
+
+	<audio id="audio" controls autoplay>
+웹 브라우저가 audio 태그를 지원하지 않습니다.
+</audio>
+	<form>
+		애국가 <input type="checkbox" value="media/Aegukga.mp3">
+		Moon Glow<input type="checkbox" value="media/MoonGlow.mp3" ">
+		EmbraceableYou<input type="checkbox" value="media/EmbraceableYou.mp3">
+		<input type="button" value="연주시작" onclick="play()">
+
+	<script type="text/javascript">
+			
+		function play(){
+			var list=[]; var j=0;
+			var a=document.getElementsByTagName("input");
+	
+			for(var i=0;i<3;i++){
+				if(a[i].checked==true){
+					list[j]=a[i].value;
+					j++;
+					}
+			}
+
+			var i=0;
+			audio.src=list[i];
+
+		
+			audio.onended = function (e) {
+				i++;
+				audio.src=list[i]; }
+		
+
+	
+			audio.onended = function (e) {
+				i++;
+				audio.src=list[i]; }
+		
+				
+
+
+}
+
+
+	</script>
+	
+</body>
+</html>
