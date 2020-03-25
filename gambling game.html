@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div{
+			color:blue;
+			font-size:50px;
+		}
+	</style>
+</head>
+<body>
+	<div><span onclick="change(this)">0 </span><span onclick="change(this)">0 </span><span onclick="change1(this)"> 0</span></div>
+
+	<div id="result" onclick="restart()" ></div>
+
+	<script type="text/javascript">
+		function change(obj){
+			var m = Math.random()*3;
+			var n = Math.floor(m);
+			obj.innerHTML=n+" ";
+		}
+
+		function change1(obj){
+			var m = Math.random()*3;
+			var n = Math.floor(m);
+			obj.innerHTML=n+" ";
+		var span=document.getElementsByTagName("span");
+		if(span[0].innerHTML==span[1].innerHTML
+			&&span[1].innerHTML==span[2].innerHTML)
+
+	document.getElementById("result").innerHTML = "success";
+
+	else
+		document.getElementById("result").innerHTML = "fail";
+
+		
+	}
+
+	function restart(){
+		var span=document.getElementsByTagName("span");
+		for(var i=0;i<3;i++)
+			span[i].innerHTML="0 ";
+		document.getElementById("result").innerHTML = "";
+	}
+
+
+
+
+	</script>
+</body>
+</html>
