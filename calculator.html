@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form >
+	<input type="text" value="" id=sic onkeypress="show(event)">식
+	<input type="text" id=dap>값
+</form>
+
+	<script type="text/javascript">
+		function show(e){
+		var a=document.getElementById("sic");
+		var dap=document.getElementById("dap");
+		if(e.keyCode=="13")
+		dap.value=eval(a.value);
+	}
+	</script>
+</body>
+</html>
