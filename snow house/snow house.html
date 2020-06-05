@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body{background-image:url(media/snow.jpg);
+			background-size: 100%;
+			background-repeat: no-repeat;}
+
+
+		#parent{
+			position:relative;
+		}
+
+
+</style>
+</head>
+<body id=parent>
+	<div id=container></div>
+	<script type="text/javascript">
+	function random(){
+		var m=Math.random()*600;
+
+		return m;
+	}
+
+	function snow(){
+		var pos=0,pos1=0;
+		var obj = document.getElementById("parent");
+		var newDIV = document.createElement("div");
+		obj.appendChild(newDIV);	
+		newDIV.innerHTML = "*";
+		newDIV.style.color="white";
+		newDIV.style.fontSize="48px";
+		newDIV.style.position="absolute"
+		var ran=random();
+		newDIV.style.left=ran+'px';
+		
+		
+		var id=setInterval(frame,10);
+
+
+		function frame(){
+			if(pos>500){
+				pos=0; pos1=0;
+				obj.removechild(newDIV);
+				snow();
+
+			}
+
+
+			else{
+			pos+=0.8;
+
+			if(pos>=0&&pos<100||pos>200&&pos<=300||pos>400&&pos<=500)
+				pos1+=0.6;
+			else
+				pos1-=0.6;
+
+			newDIV.style.top=pos+'px';
+			newDIV.style.left=ran+pos1+'px';
+		}
+			
+			}
+
+	}
+
+	var time=0;
+
+	for(var i=0;i<30;i++){
+	setTimeout("snow()",time);
+	time+=1000;
+	}
+	</script>
+
+</body>
+</html>
